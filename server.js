@@ -52,9 +52,14 @@ app.listen(PORT, function() {
     return res.json(reservations);
   });
 
+  app.get("/api/waitlist", function(req, res) {
+    return res.json(waitlist);
+  });
+
   app.post("/api/reservations", function(req, res) {
 
     var newreservations = req.body;
+    var newwaitlist = req.body;
 
     if (reservations.length < 5) {
 
@@ -65,10 +70,13 @@ app.listen(PORT, function() {
       res.json(newreservations); 
 
     } else {
-      console.log(newreservations + "added to waitlist");
+      console.log(newwaitlist + "added to waitlist");
 
-      waitlist.push(newreservations);
+      waitlist.push(newwaitlist);
 
-      res.json(newreservations); 
+      res.json(newwaitlist); 
     }
   });
+
+
+
