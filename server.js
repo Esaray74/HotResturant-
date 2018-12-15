@@ -62,13 +62,13 @@ app.listen(PORT, function() {
 
       reservations.push(newreservations);
     
-      //res.json(newreservations); ???
+      res.json(newreservations); 
 
     } else {
       console.log(newreservations + "added to waitlist");
 
       waitlist.push(newreservations);
 
-      //res.json(newreservations); ???
+      res.json(newreservations); 
     }
   });
